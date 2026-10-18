@@ -1,0 +1,17 @@
+{
+  "account_info": {
+    "google_id": "google_oauth_1092830192",
+    "display_name": "Pro Builder",
+    "username": "housemaker_99",
+    "date_of_birth": "2018-05-12",
+    "registration_timestamp": "2026-10-18T16:34:00Z"
+  },
+  "permissions": {
+    "can_play": true,
+    "guest_session": false
+  },
+  "game_state": {
+    "current_chapter": 1,
+    "unlocked_items": ["starter_brick", "wooden_door"]
+  }
+}
