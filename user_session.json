@@ -2,6 +2,39 @@
   "account_info": {
     "google_id": "google_oauth_1092830192",
     "display_name": "Pro Builder",
+    "username": "housemaker_99",
+    "date_of_birth": "2018-05-12",
+    "registration_timestamp": "2026-10-18T16:34:00Z"
+  },
+  "permissions": {
+    "can_play": true,
+    "guest_session": false
+  },
+  "game_state": {
+    "current_chapter": 1,
+    "unlocked_items": ["starter_brick", "wooden_door"]
+  }
+}
+{
+  "account_info": {
+    "google_id": "google_oauth_1092830192",
+    "display_name": "Pro Builder",
+    "username": "housemaker_99"
+  },
+  "game_state": {
+    "current_chapter": 2,
+    "active_creation_mode": "AI",
+    "last_used_prompt": "Describe the game you want to build..."
+  },
+  "ui_states": {
+    "builder_mode_popup_visible": false,
+    "current_view_screen": "picture_workspace"
+  }
+}
+{
+  "account_info": {
+    "google_id": "google_oauth_1092830192",
+    "display_name": "Pro Builder",
     "username": "housemaker_99"
   },
   "game_state": {
@@ -40,5 +73,24 @@
         "is_public": true
       }
     ]
+  }
+}
+{
+  "account_info": {
+    "google_id": "google_oauth_1092830192",
+    "display_name": "Pro Builder",
+    "username": "housemaker_99"
+  },
+  "game_state": {
+    "current_chapter": 4,
+    "last_active_screen": "explore_feed"
+  },
+  "social": {
+    "following": ["google_oauth_555444"],
+    "friends": ["google_oauth_111222"],
+    "friend_requests": {
+      "sent": ["google_oauth_777888"],
+      "received": ["google_oauth_999000"]
+    }
   }
 }
