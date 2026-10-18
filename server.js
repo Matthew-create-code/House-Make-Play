@@ -124,3 +124,11 @@ app.post('/api/explore/friend-request/send', (req, res) => {
 
     return res.status(200).json({ success: true, status: "Pending Acceptance" });
 });
+// Inside your index.html API connection script logic:
+const BACKEND_URL = "https://your-deployed-backend-app.com"; // Replace with your live API server address
+
+// Connect to Chapter 1 Account Router
+fetch(`${BACKEND_URL}/api/auth/register`, {
+    method: 'POST',
+    body: JSON.stringify(userData)
+});
