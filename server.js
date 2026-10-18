@@ -56,4 +56,25 @@ app.post('/api/auth/decision', (req, res) => {
         }
         return res.json({ success: true, user: existingUser });
     }
+});// CHAPTER 3: HOME DASHBOARD ROUTE
+app.get('/api/home/:userId', (req, res) => {
+    const { userId } = req.params;
+    const userProfile = usersDatabase[userId];
+
+    if (!userProfile) {
+        return res.status(404).json({ 
+            success: false, 
+            message: "Profile not found. Please log in first." 
+        });
+    }
+
+    // Return the home items sorted for the dashboard grid
+    return res.status(200).json({
+        success: true,
+        dashboard: {
+            savedGames: userProfile.home_dashboard.saved_games,
+            playlists: userProfile.home_dashboard.playlists,
+            madeGames: userProfile.home_dashboard.made_games
+        }
+    });
 });
