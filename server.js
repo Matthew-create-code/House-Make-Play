@@ -78,3 +78,49 @@ app.get('/api/home/:userId', (req, res) => {
         }
     });
 });
+// 1. GET USER PROFILE AND MADE GAMES
+app.get('/api/explore/profile/:targetUserId', (req, res) => {
+    const target = usersDatabase[req.params.targetUserId];
+    if (!target) return res.status(404).json({ success: false, message: "User not found" });
+
+    return res.status(200).json({
+        success: true,
+        profile: {
+            username: target.username,
+            displayName: target.displayName,
+            madeGames: target.home_dashboard?.made_games || []
+        }
+    });
+});
+
+// 2. FOLLOW A USER
+app.post('/api/explore/follow', (req, res) => {
+    const { userId, targetUserId } = req.body;
+    
+    if (!usersDatabase[userId] || !usersDatabase[targetUserId]) {
+        return res.status(404).json({ success: false, message: "User session invalid" });
+    }
+
+    // Add to following array safely
+    if (!usersDatabase[userId].social.following.includes(targetUserId)) {
+        usersDatabase[userId].social.following.push(targetUserId);
+    }
+
+    return res.status(200).json({ success: true, message: "Successfully followed player!" });
+});
+
+// 3. SEND FRIEND REQUEST (PENDING ACCEPTANCE)
+app.post('/api/explore/friend-request/send', (req, res) => {
+    const { fromUserId, toUserId } = req.body;
+
+    if (!usersDatabase[fromUserId] || !usersDatabase[toUserId]) {
+        return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    // Add to pending outbound for sender
+    usersDatabase[fromUserId].social.friend_requests.sent.push(toUserId);
+    // Add to pending inbound for receiver
+    usersDatabase[toUserId].social.friend_requests.received.push(fromUserId);
+
+    return res.status(200).json({ success: true, status: "Pending Acceptance" });
+});
