@@ -5,12 +5,40 @@
     "username": "housemaker_99"
   },
   "game_state": {
-    "current_chapter": 2,
-    "active_creation_mode": "AI",
-    "last_used_prompt": "Describe the game you want to build..."
+    "current_chapter": 3,
+    "last_active_screen": "home_dashboard"
   },
-  "ui_states": {
-    "builder_mode_popup_visible": false,
-    "current_view_screen": "picture_workspace"
+  "home_dashboard": {
+    "saved_games": [
+      {
+        "save_id": "save_001",
+        "title": "My Starter Cottage",
+        "last_played": "2026-10-18T16:45:00Z",
+        "blueprint_file": "/blueprints/starter_cottage.json"
+      },
+      {
+        "save_id": "save_002",
+        "title": "Unfinished Modern Villa",
+        "last_played": "2026-10-15T09:12:00Z",
+        "blueprint_file": "/blueprints/modern_villa_draft.json"
+      }
+    ],
+    "playlists": [
+      {
+        "playlist_id": "play_99",
+        "name": "Spooky Obby Levels",
+        "total_items": 4,
+        "game_ids": ["game_abc", "game_xyz"]
+      }
+    ],
+    "made_games": [
+      {
+        "game_id": "game_abc",
+        "title": "AI Castle Escape v1",
+        "published_date": "2026-10-17T21:00:00Z",
+        "visits": 42,
+        "is_public": true
+      }
+    ]
   }
 }
